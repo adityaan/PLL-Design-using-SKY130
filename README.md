@@ -19,3 +19,41 @@ The first day of the workshop was a theoretical introduction to various concepts
 
 # Day 2
 
+## PLL Component circuit design
+
+![snip2](https://user-images.githubusercontent.com/22279620/127750060-b4499998-3560-464a-8b3d-47229c796a76.PNG)
+
+
+Create file FreqDiv.cir that would hold the entire frequency division circuit
+
+![snip2](https://user-images.githubusercontent.com/22279620/127750090-0edec457-a7f0-4e9d-8c48-104ca70527bf.PNG)
+
+The circuit file defines three instances of an inverter and two instances of transmission gates.
+
+
+![snip2](https://user-images.githubusercontent.com/22279620/127750153-837ea5ea-b3e2-469a-85fc-45bb84ec36b3.PNG)
+
+## PLL Component circuit simulation
+
+Run the simulation of the circuit using Ngspice and obtain the transient analysis plot. The plot verifies that the frequency divider circuit works as intended.
+
+![snip2](https://user-images.githubusercontent.com/22279620/127750356-16d87549-3295-414c-8913-33c0f597b550.PNG)
+
+
+Similarly, the control pump circuit design file is simulated and the transient analysis plot is obtained. 
+
+![snip2](https://user-images.githubusercontent.com/22279620/127750496-0145d978-784f-4cdc-9ce2-6ea3a821920b.PNG)
+
+VCO design is also simulated to obtain the transient analysis plot
+
+![snip2](https://user-images.githubusercontent.com/22279620/127750569-8cd4e54b-1591-4ec6-a2f0-40ff99e206e3.PNG)
+
+
+## Combine PLL sub circuits and simulate full design
+
+All the sub modules of the PLL are combined and defined in the file PLL_PreLay.cir
+
+
+
+
+
