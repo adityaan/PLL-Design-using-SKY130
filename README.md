@@ -51,7 +51,9 @@ VCO design is also simulated to obtain the transient analysis plot
 
 ## Combine PLL sub circuits and simulate full design
 
-All the sub modules of the PLL are combined and defined in the file PLL_PreLay.cir
+All the sub modules of the PLL are combined and defined in the file PLL_PreLay.cir and the simulate the entire control loop
+
+
 
 
 
