@@ -114,6 +114,35 @@ Finally, the entire PLL layout was designed using the various sub modules layout
 
 ## Parasitcs Extraction
 
+The PFD layout is opened and the entire design is selected. After selecting the entire design, the "extract all" command is run to
+extract the parasitics in a PFD.ext file
+
+![snip2](https://user-images.githubusercontent.com/22279620/127769168-fdd87b6f-42db-40e3-9327-6ccd34089499.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127769185-b71a0a4b-4170-4d5b-af6a-4c4ad3337c18.PNG)
+
+The extracted parasitic file consists of multiple capacitance values.
+
+![snip2](https://user-images.githubusercontent.com/22279620/127769266-1abd90ab-5144-47c6-bace-ef535823eb6e.PNG)
+
+## Post Layout Simulation
+
+![snip2](https://user-images.githubusercontent.com/22279620/127769401-55cce147-33e3-4417-9f5f-517435661160.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127769427-e6305800-f28d-44b2-a918-3e41d2c9a81e.PNG)
+
+Comparing the transient file output with what is being expected, the circuit works as intended. The next step is to prepare the design for tapeout.
+
+## Tapeout using Caravel SoC
+
+![snip2](https://user-images.githubusercontent.com/22279620/127770518-5cd6c9cf-e3ec-4d5e-be78-931630c07d30.PNG)
+
+The analog user project wrapper is downloaded from the efabless Github repo. The extracted GDS file is used to place the layout of the PLL design. The GDS file contains IO and power pins such as VDD and VSS on it's sides.
+
+![snip2](https://user-images.githubusercontent.com/22279620/127773851-e58a8a65-9bc6-4cb9-ab0c-a411aabf7a2d.PNG)
+
+
+
 
 
 
