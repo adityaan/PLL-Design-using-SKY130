@@ -1,6 +1,20 @@
-# PLL-Design-using-SKY130
+# PLL-Design-using-SKY130 technology
 
-# Introduction
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Day 1](#day1)
+- [Day 2](#day2)
+  - [PLL Component Circuit Design](#design)
+  - [PLL Component Circuit Simulation](#simulation)
+  - [Combine PLL Sub Circuits and Simulate Full Design](#combine)
+  - [PLL Circuit Layout using Magic](#layout)
+  - [Parasitics Extraction](#parasitic)
+  - [Post Layout Simulation](#postlayout)
+  - [Tapeout using Caravel SoC](#tapeout)
+  - [Acknowledgements](#ack)
+
+# Introduction <a name="introduction"></a>
 
 ![PLL-Workshop-Banner_efabless](https://user-images.githubusercontent.com/22279620/127746035-1e97e877-5d3e-4bbd-a08c-e5131de5c384.png)
 
@@ -10,16 +24,16 @@ of VLSI System Design (VSD) Corp. Pvt. Ltd and Lakshmi Sathidevi.
 
 The labs covered the entire IC design flow from circuit design until tapeout using Open-Source 130nm Process Design Kits(PDK) by Google-Skywater and the latest Caravel Framework by efabless. Open-Source EDA tools such as ngSpice and Magic were used throughout th design flow.
 
-# Day 1
+# Day 1 <a name="day1"></a>
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127747417-d6453d93-e0ea-432d-a3bd-f8a44e7c651f.PNG)
 
 
 The first day of the workshop was a theoretical introduction to various concepts related to PLL and how it is used to get a precise noise signal without noise. Quartz Crystals and Voltage Controlled Oscillator were discussed briefly. The various components that make up the PLL such as the Phase Frequency Detector(PFD), Charge Pump(CP), Voltage Controlled Oscillator(VCO) and Frequency Divider(FD) were talked about in depth in terms of timing waveforms, CMOS and digital circuits and Finite State Machines(FSM). Design Flow, PDK, speciifcation and Open-Source EDA tool setup were briefly touched upon as well.
 
-# Day 2
+# Day 2 <a name="day2"></a>
 
-## PLL Component circuit design
+## PLL Component circuit design <a name="design"></a>
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127750060-b4499998-3560-464a-8b3d-47229c796a76.PNG)
 
@@ -34,7 +48,7 @@ The circuit file defines three instances of an inverter and two instances of tra
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127750153-837ea5ea-b3e2-469a-85fc-45bb84ec36b3.PNG)
 
-## PLL Component circuit simulation
+## PLL Component Circuit Simulation <a name="simulation"></a>
 
 Run the simulation of the circuit using Ngspice and obtain the transient analysis plot. The plot verifies that the frequency divider circuit works as intended.
 
@@ -65,7 +79,7 @@ VCO design is also simulated to obtain the transient analysis plot
 All the PLL sub modules and their transient plots were as expected.
 
 
-## Combine PLL sub circuits and simulate full design
+## Combine PLL sub circuits and simulate full design <a name="combine"></a>
 
 All the sub modules of the PLL are combined and defined in the file PLL_PreLay.cir and the simulate the entire control loop
 
@@ -74,7 +88,7 @@ All the sub modules of the PLL are combined and defined in the file PLL_PreLay.c
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127767982-92ef59b0-ab66-4669-8aa1-fa20243aab79.PNG)
 
-## PLL Circuit Layout using Magic
+## PLL Circuit Layout using Magic <a name="layout"></a>
 
 First, the freuency divider circuit was designed using Magic
 
@@ -112,7 +126,7 @@ Finally, the entire PLL layout was designed using the various sub modules layout
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127768636-137a8790-b9cc-4f11-b47f-13ca16b76b19.PNG)
 
-## Parasitcs Extraction
+## Parasitics Extraction <a name="parasitic">
 
 The PFD layout is opened and the entire design is selected. After selecting the entire design, the "extract all" command is run to
 extract the parasitics in a PFD.ext file
@@ -125,7 +139,7 @@ The extracted parasitic file consists of multiple capacitance values.
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127769266-1abd90ab-5144-47c6-bace-ef535823eb6e.PNG)
 
-## Post Layout Simulation
+## Post Layout Simulation <a name="postlayout">
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127769401-55cce147-33e3-4417-9f5f-517435661160.PNG)
 
@@ -133,7 +147,7 @@ The extracted parasitic file consists of multiple capacitance values.
 
 Comparing the transient file output with what is being expected, the circuit works as intended. The next step is to prepare the design for tapeout.
 
-## Tapeout using Caravel SoC
+## Tapeout using Caravel SoC <a name="tapeout"></a>
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127770518-5cd6c9cf-e3ec-4d5e-be78-931630c07d30.PNG)
 
@@ -141,7 +155,7 @@ The analog user project wrapper is downloaded from the efabless Github repo. The
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127773851-e58a8a65-9bc6-4cb9-ab0c-a411aabf7a2d.PNG)
 
-# Acknowledgements
+# Acknowledgements <a name="ack"></a>
 
 - [Kunal Gosh - Co-Founder at VLSI System Design](https://github.com/kunalg123)
 - [Lakshmi Sathi](https://github.com/lakshmi-sathi)
