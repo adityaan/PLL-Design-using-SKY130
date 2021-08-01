@@ -26,7 +26,8 @@ The first day of the workshop was a theoretical introduction to various concepts
 
 Create file FreqDiv.cir that would hold the entire frequency division circuit
 
-![snip2](https://user-images.githubusercontent.com/22279620/127750090-0edec457-a7f0-4e9d-8c48-104ca70527bf.PNG)
+![snip2](https://user-images.githubusercontent.com/22279620/127766001-df6ab13b-79b3-4d07-bc8e-93c9dea59f27.PNG)
+
 
 The circuit file defines three instances of an inverter and two instances of transmission gates.
 
@@ -37,21 +38,83 @@ The circuit file defines three instances of an inverter and two instances of tra
 
 Run the simulation of the circuit using Ngspice and obtain the transient analysis plot. The plot verifies that the frequency divider circuit works as intended.
 
-![snip2](https://user-images.githubusercontent.com/22279620/127750356-16d87549-3295-414c-8913-33c0f597b550.PNG)
+![snip2](https://user-images.githubusercontent.com/22279620/127766176-89421591-03fc-47e8-b5c6-68cd1f6173cb.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127766219-3586040b-ea68-433b-8b9c-29b9c53dbe82.PNG)
 
 
 Similarly, the control pump circuit design file is simulated and the transient analysis plot is obtained. 
 
-![snip2](https://user-images.githubusercontent.com/22279620/127750496-0145d978-784f-4cdc-9ce2-6ea3a821920b.PNG)
+![snip2](https://user-images.githubusercontent.com/22279620/127766302-c8f37fda-4060-4854-9a78-43b0eed95a68.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127766323-86a4935d-6f49-4925-9c3d-636eae14bb6c.PNG)
+
+PD design is simulated to obtain the transient analysis plot
+
+![snip2](https://user-images.githubusercontent.com/22279620/127766421-7a231fe9-2d71-43d8-a711-373b7dab5e40.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127766447-1a4d6e0d-613b-4171-8811-75dae80eefdf.PNG)
+
 
 VCO design is also simulated to obtain the transient analysis plot
 
-![snip2](https://user-images.githubusercontent.com/22279620/127750569-8cd4e54b-1591-4ec6-a2f0-40ff99e206e3.PNG)
+![snip2](https://user-images.githubusercontent.com/22279620/127766503-968090a8-a254-4b0c-a1ed-ee0da590df81.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127766519-d202f00d-688f-455f-87b4-ca87a5ec5d26.PNG)
+
+All the PLL sub modules and their transient plots were as expected.
 
 
 ## Combine PLL sub circuits and simulate full design
 
 All the sub modules of the PLL are combined and defined in the file PLL_PreLay.cir and the simulate the entire control loop
+
+
+![snip2](https://user-images.githubusercontent.com/22279620/127767962-efd0c3ec-3ec6-42ca-8407-4424defb8bf9.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127767982-92ef59b0-ab66-4669-8aa1-fa20243aab79.PNG)
+
+## PLL Circuit Layout using Magic
+
+First, the freuency divider circuit was designed using Magic
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768242-5e7c8a06-d7d9-4760-9cbb-c7cc341ae28b.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768266-b0cfcc19-3469-411b-a43d-7fdda7f33023.PNG)
+
+Then, the layout for the control pump was designed
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768337-841b24fd-4418-4d3e-866a-c440c7f2a38d.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768362-7c043eed-d43b-4817-a231-dc12d6c11f59.PNG)
+
+The layout for the MUX was designed after the control pump
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768408-aec351cd-1092-4ced-bc20-bef17cc4c6ce.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768422-f8d7c762-edb6-40bd-94c9-d4da75d4122d.PNG)
+
+After the MUX, the layout for the PFD was created
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768482-93e82472-9c62-45a0-bdca-ff2719259144.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768498-df2c5654-a2fd-44b7-854f-38c064c96a77.PNG)
+
+The layout for the VCO was the last sub module to be designed before putting the entire PLL layout together.
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768531-8e0363b6-8dd8-4537-9fdd-c8f1271bea08.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768554-0327355e-5ab4-4097-b911-a9e8edf95995.PNG)
+
+Finally, the entire PLL layout was designed using the various sub modules layouts designed earlier
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768614-3ba6a68a-2939-48de-9f92-7043a44b58d8.PNG)
+
+![snip2](https://user-images.githubusercontent.com/22279620/127768636-137a8790-b9cc-4f11-b47f-13ca16b76b19.PNG)
+
+## Parasitcs Extraction
+
+
 
 
 
