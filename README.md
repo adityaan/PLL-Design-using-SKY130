@@ -141,6 +141,10 @@ The analog user project wrapper is downloaded from the efabless Github repo. The
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127773851-e58a8a65-9bc6-4cb9-ab0c-a411aabf7a2d.PNG)
 
+# Acknowledgements
+
+- [Kunal Gosh - Co-Founder at VLSI System Design](https://github.com/kunalg123)
+- [Lakshmi Sathi](https://github.com/lakshmi-sathi)
 
 
 
