@@ -1,10 +1,10 @@
-# PLL-Design-using-SKY130 technology
+# PLL-Design-using-SKY130 PDK
 
 # Table of Contents
 
 - [Introduction](#introduction)
-- [Day 1](#day1)
-- [Day 2](#day2)
+- [Day 1 - PLL Overview](#day1)
+- [Day 2 - Project Labs](#day2)
   - [PLL Component Circuit Design](#design)
   - [PLL Component Circuit Simulation](#simulation)
   - [Combine PLL Sub Circuits and Simulate Full Design](#combine)
@@ -24,33 +24,33 @@ of VLSI System Design (VSD) Corp. Pvt. Ltd and Lakshmi Sathidevi.
 
 The labs covered the entire IC design flow from circuit design until tapeout using Open-Source 130nm Process Design Kits(PDK) by Google-Skywater and the latest Caravel Framework by efabless. Open-Source EDA tools such as ngSpice and Magic were used throughout th design flow.
 
-# Day 1 <a name="day1"></a>
+# Day 1 - PLL Overview <a name="day1"></a>
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127747417-d6453d93-e0ea-432d-a3bd-f8a44e7c651f.PNG)
 
 
 The first day of the workshop was a theoretical introduction to various concepts related to PLL and how it is used to get a precise noise signal without noise. Quartz Crystals and Voltage Controlled Oscillator were discussed briefly. The various components that make up the PLL such as the Phase Frequency Detector(PFD), Charge Pump(CP), Voltage Controlled Oscillator(VCO) and Frequency Divider(FD) were talked about in depth in terms of timing waveforms, CMOS and digital circuits and Finite State Machines(FSM). Design Flow, PDK, speciifcation and Open-Source EDA tool setup were briefly touched upon as well.
 
-# Day 2 <a name="day2"></a>
+# Day 2 - Project Labs <a name="day2"></a>
 
 ## PLL Component circuit design <a name="design"></a>
+
+During this stage, we designed the frequency divider module as discussed during Day 1. We designed the gate level circuit which contains inverters and transmission gates connected together. These gates are designed by specifying their p-type and n-type FET specification along with their length and width specifications. 
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127750060-b4499998-3560-464a-8b3d-47229c796a76.PNG)
 
 
-Create file FreqDiv.cir that would hold the entire frequency division circuit
+The FreDiv.cir circuit is created to define the specifications of the circuit. The file also includes the SKY130nm library file and also constraints to plot the transient analysis.
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127766001-df6ab13b-79b3-4d07-bc8e-93c9dea59f27.PNG)
 
-
-The circuit file defines three instances of an inverter and two instances of transmission gates.
-
-
 ![snip2](https://user-images.githubusercontent.com/22279620/127750153-837ea5ea-b3e2-469a-85fc-45bb84ec36b3.PNG)
+
+Similarly, the other sub modules for the PLL circuit is defined using the specifications.
 
 ## PLL Component Circuit Simulation <a name="simulation"></a>
 
-Run the simulation of the circuit using Ngspice and obtain the transient analysis plot. The plot verifies that the frequency divider circuit works as intended.
+After designing the circuits, all the sub modules are simulated using Ngspice along with the transient analysis plots. The simulations are carried out to verify the functionality before moving to the Layout stage of the project.
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127766176-89421591-03fc-47e8-b5c6-68cd1f6173cb.PNG)
 
@@ -79,7 +79,7 @@ VCO design is also simulated to obtain the transient analysis plot
 All the PLL sub modules and their transient plots were as expected.
 
 
-## Combine PLL sub circuits and simulate full design <a name="combine"></a>
+## Combine PLL Sub Circuits and Simulate Full Design <a name="combine"></a>
 
 All the sub modules of the PLL are combined and defined in the file PLL_PreLay.cir and the simulate the entire control loop
 
@@ -90,7 +90,7 @@ All the sub modules of the PLL are combined and defined in the file PLL_PreLay.c
 
 ## PLL Circuit Layout using Magic <a name="layout"></a>
 
-First, the freuency divider circuit was designed using Magic
+During this stage, we design the layouts for each sub module using Magic. This is done by creating gates, NMOS and PMOS regions, creating the VDD and VSS by placcing the appropriate metal layers and connecting the layers using local interconnects. Also, vias would also be used to connect the metal layers. Most importantly, at the end of this stage, the priority is to make sure that the layed out design is free of Design Rule Check(DRC) errors so as to get a circuit the functions correctly.
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127768242-5e7c8a06-d7d9-4760-9cbb-c7cc341ae28b.PNG)
 
@@ -126,10 +126,11 @@ Finally, the entire PLL layout was designed using the various sub modules layout
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127768636-137a8790-b9cc-4f11-b47f-13ca16b76b19.PNG)
 
+All the above designs are free of DRC errors. In the next stage, we would be using the design from this stage for parasitic extraction.
+
 ## Parasitics Extraction <a name="parasitic">
 
-The PFD layout is opened and the entire design is selected. After selecting the entire design, the "extract all" command is run to
-extract the parasitics in a PFD.ext file
+During this stage, the design is used for parasitic extraction. This is done to make sure that 
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127769168-fdd87b6f-42db-40e3-9327-6ccd34089499.PNG)
 
