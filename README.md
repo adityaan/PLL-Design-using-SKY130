@@ -157,7 +157,7 @@ Comparing the transient file output with what is being expected, the circuit wor
  ![snip2](https://user-images.githubusercontent.com/22279620/127870858-12988d03-a1c8-419f-bf18-0f14e4f4202b.PNG)
   
 During this final stage, we would be coonecting the PLL designed to the Caravel SoC for tapeout. The final PLL design would be in GDSII format and can be imported into the 
-SoC architecture. For more information about Caravel SoC and how to integrate designs, please check this [link](https://github.com/efabless/caravel)
+SoC architecture. For more information about Caravel SoC and how to integrate designs, please check this [link.](https://github.com/efabless/caravel)
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127770518-5cd6c9cf-e3ec-4d5e-be78-931630c07d30.PNG)
 
