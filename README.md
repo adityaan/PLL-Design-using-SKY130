@@ -130,7 +130,8 @@ All the above designs are free of DRC errors. In the next stage, we would be usi
 
 ## Parasitics Extraction <a name="parasitic">
 
-During this stage, the design is used for parasitic extraction. This is done to make sure that 
+During this stage, the design is used for parasitic extraction. This is done to make sure that the various capacitance values are being extracted so as to simulate
+the precise delay values during the post layout simulation stage.
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127769168-fdd87b6f-42db-40e3-9327-6ccd34089499.PNG)
 
@@ -141,6 +142,9 @@ The extracted parasitic file consists of multiple capacitance values.
 ![snip2](https://user-images.githubusercontent.com/22279620/127769266-1abd90ab-5144-47c6-bace-ef535823eb6e.PNG)
 
 ## Post Layout Simulation <a name="postlayout">
+  
+This stage is being caaried out to simulate the PLL design post layout along with the extracted parasitic value. This would be the last simulation of the design to
+verify it's functionality and to make sure that it meets all the design constraints before tapeout.
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127769401-55cce147-33e3-4417-9f5f-517435661160.PNG)
 
@@ -149,6 +153,11 @@ The extracted parasitic file consists of multiple capacitance values.
 Comparing the transient file output with what is being expected, the circuit works as intended. The next step is to prepare the design for tapeout.
 
 ## Tapeout using Caravel SoC <a name="tapeout"></a>
+  
+ ![snip2](https://user-images.githubusercontent.com/22279620/127870858-12988d03-a1c8-419f-bf18-0f14e4f4202b.PNG)
+  
+During this final stage, we would be coonecting the PLL designed to the Caravel SoC for tapeout. The final PLL design would be in GDSII format and can be imported into the 
+SoC architecture. For more information about Caravel SoC and how to integrate designs, please check this [link](https://github.com/efabless/caravel)
 
 ![snip2](https://user-images.githubusercontent.com/22279620/127770518-5cd6c9cf-e3ec-4d5e-be78-931630c07d30.PNG)
 
