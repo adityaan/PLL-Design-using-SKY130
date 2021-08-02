@@ -12,7 +12,7 @@
   - [Parasitics Extraction](#parasitic)
   - [Post Layout Simulation](#postlayout)
   - [Tapeout using Caravel SoC](#tapeout)
-  - [Acknowledgements](#ack)
+- [Acknowledgements](#ack)
 
 # Introduction <a name="introduction"></a>
 
